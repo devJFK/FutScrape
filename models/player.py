@@ -92,7 +92,7 @@ class Player:
                 'HIGH_DAY':HIGH_DAY,
                 'LOW':LOW_PRICE,
                 'LOW_DAY':LOW_DAY,
-                'DIFFERENCE': HIGH-LOW,
+                'DIFFERENCE': HIGH_PRICE-LOW_PRICE,
                 'VOLUME':VOLUME,
                 'AVERAGE': {
                     'ONE':one_day_average,
