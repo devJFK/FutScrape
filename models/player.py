@@ -77,7 +77,7 @@ class Player:
                 if sale_date > datetime.datetime.utcnow()+datetime.timedelta(days=-10):
                     ten_day_sales.append(sale['Price'])
 
-            VOLUME = len(closed_sales)
+            VOLUME = len(one_day_sales)
 
             one_day_average = req.get(f'https://www.futbin.com/getPlayerAvgSell?days=1&resourceId={self.ID}&platform={platform}').json()['avg_sell_price']
             five_day_average = req.get(f'https://www.futbin.com/getPlayerAvgSell?days=5&resourceId={self.ID}&platform={platform}').json()['avg_sell_price']

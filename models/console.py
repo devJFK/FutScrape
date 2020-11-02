@@ -36,7 +36,7 @@ class Console:
         self.clear_console()
         figlet = pyfiglet.figlet_format(self.PROGRAM_NAME, font="slant")
         for part in figlet.split('\n'):
-            self.print_center(f'[green]{part}[/green]')
+            self.print_center(f'[green]{part}')
         print()
 
     @staticmethod
