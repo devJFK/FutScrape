@@ -40,6 +40,27 @@ class Player:
 
             if response.status_code != 200:
                 return ResponseType.BANNED
+            if 'No Record Found' in response.text:
+                self.STATS = {
+                'LAST_SALES': 0,
+                'HIGH':0,
+                'HIGH_DAY':0,
+                'LOW':0,
+                'LOW_DAY':0,
+                'DIFFERENCE': 0,
+                'VOLUME':0,
+                'AVERAGE': {
+                    'ONE':0,
+                    'FIVE':0,
+                    'TEN':0
+                },
+                'MEDIAN': {
+                    'ONE':0,
+                    'FIVE':0,
+                    'TEN':0
+                }
+            }
+                return ResponseType.FAILURE
             response = response.json()
 
 
