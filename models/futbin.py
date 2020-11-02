@@ -99,7 +99,7 @@ class Futbin:
             player_list = []
 
             for player in players:
-                player_list.append(Player(player['name'], player['baseid'], player['position'], player['version'], player['rating']))
+                player_list.append(Player(player['name'], player['resource'], player['position'], player['version'], player['rating']))
 
             return player_list
 

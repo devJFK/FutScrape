@@ -115,3 +115,9 @@ class Player:
         except:
             print(traceback.format_exc())
             return ResponseType.BANNED
+    
+    def __eq__(self, other):
+        if other.NAME == self.NAME and other.RATING == self.RATING and other.POSITION == self.POSITION:
+            return True
+
+        return False
