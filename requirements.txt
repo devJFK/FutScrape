@@ -1,0 +1,4 @@
+urllib3==1.25.9
+requests==2.22.0
+pyfiglet==0.8.post1
+rich==9.1.0
