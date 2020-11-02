@@ -55,7 +55,7 @@ def run():
     print(f'[green]Successfully pulled {len(players)} players![/green]')
 
     for player in players:
-        player.pull_sales(Proxy(None, None) platform)
+        player.pull_sales(Proxy(None, None), platform)
         print(f'[green]Successfully pulled sales record for {player.NAME}![/green]')
 
     filename = datetime.datetime.now().strftime("%m.%d.%Y.%H.%M")
