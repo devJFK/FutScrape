@@ -32,6 +32,20 @@ def run():
     
     print(f'[green]Successfully logged in![/green]')
 
+    Console.print_name()
+
+    print(f'[yellow]1 - PC[/yellow]')
+    print(f'[yellow]2 - PS4[/yellow]')
+    print(f'[yellow]3 - Xbox One[/yellow]')
+
+    entry = Console.ask_integer('Please choose from the menu above.')
+    platform = 'pc'
+
+    if entry == 2:
+        platform = 'ps4'
+    elif entry == 3:
+        platform = 'xone'
+
     print(f'[yellow]Attempting to pull your favorites...[/yellow]')
     players = futbin.pull_favorites()
     if players == ResponseType.BANNED:
@@ -41,7 +55,7 @@ def run():
     print(f'[green]Successfully pulled {len(players)} players![/green]')
 
     for player in players:
-        player.pull_sales(Proxy(None, None))
+        player.pull_sales(Proxy(None, None) platform)
         print(f'[green]Successfully pulled sales record for {player.NAME}![/green]')
 
     filename = datetime.datetime.now().strftime("%m.%d.%Y.%H.%M")

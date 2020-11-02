@@ -31,7 +31,8 @@ class Player:
                 'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36 OPR/71.0.3770.284',
                 'Accept':'application/json, text/javascript, */*; q=0.01',
                 'Accept-Language':'en-US,en;q=0.9',
-                'X-Requested-With':'XMLHttpRequest'
+                'X-Requested-With':'XMLHttpRequest',
+                'Cookie': f'platform={platform}; platform_type={platform};'
             }
 
             
