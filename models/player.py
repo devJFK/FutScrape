@@ -42,11 +42,14 @@ class Player:
                 return ResponseType.BANNED
             response = response.json()
 
+
+            closed_sale_prices = []
             closed_sales = []
 
             for sale in response:
                 if sale['status'] == 'closed':
                     closed_sales.append(sale)
+                    closed_sale_prices.append(sale['Price'])
 
             HIGH_PRICE = 0
             HIGH_DAY = ''
@@ -88,6 +91,7 @@ class Player:
             ten_day_median = median(ten_day_sales)
 
             self.STATS = {
+                'LAST_SALES': closed_sale_prices[:5],
                 'HIGH':HIGH_PRICE,
                 'HIGH_DAY':HIGH_DAY,
                 'LOW':LOW_PRICE,
