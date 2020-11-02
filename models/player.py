@@ -54,7 +54,7 @@ class Player:
             for sale in closed_sales:
                 if int(sale['Price']) > HIGH_PRICE:
                     HIGH_PRICE = int(sale['Price'])
-                    HIGH_DAY = datetime.datetime.strptime(sale['updated'], '%Y-%m-%d %H:%M:%S').strftime('%A %b %d, %Y')
+                    HIGH_DAY = datetime.datetime.strptime(sale['updated'], '%Y-%m-%d %H:%M:%S').strftime('%A %b %d, %Y %H:%M')
 
             LOW_PRICE = 0
             LOW_DAY = ''
@@ -62,7 +62,7 @@ class Player:
             for sale in closed_sales:
                 if int(sale['Price']) < LOW_PRICE or LOW_PRICE == 0:
                     LOW_PRICE = int(sale['Price'])
-                    LOW_DAY = datetime.datetime.strptime(sale['updated'], '%Y-%m-%d %H:%M:%S').strftime('%A %b %d, %Y')
+                    LOW_DAY = datetime.datetime.strptime(sale['updated'], '%Y-%m-%d %H:%M:%S').strftime('%A %b %d, %Y %H:%M')
 
             one_day_sales = []
             five_day_sales = []
